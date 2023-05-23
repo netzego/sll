@@ -8,7 +8,7 @@
  *
  */
 struct sllnode {
-    int8_t value;         /* value of the node  */
+    uint8_t value;        /* value of the node  */
     struct sllnode *next; /* pointer to the next node  */
 };
 
