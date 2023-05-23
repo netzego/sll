@@ -20,6 +20,24 @@ START_TEST(test_struct_node_initialization)
 }
 END_TEST
 
+START_TEST(test_func_list_add)
+{
+    node *head, *tail;
+
+    // initialization
+    tail = list_add(0, NULL);
+    head = list_add(1, tail);
+
+    // check head
+    ck_assert_int_eq(head->value, 1);
+    ck_assert_ptr_nonnull(head->next);
+
+    // check tail
+    ck_assert_int_eq(tail->value, 0);
+    ck_assert_ptr_null(tail->next);
+}
+END_TEST
+
 Suite *sll_testsuite(void)
 {
     Suite *s;
@@ -31,6 +49,7 @@ Suite *sll_testsuite(void)
     tc_core = tcase_create("Core");
 
     tcase_add_test(tc_core, test_struct_node_initialization);
+    tcase_add_test(tc_core, test_func_list_add);
 
     suite_add_tcase(s, tc_core);
 
