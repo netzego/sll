@@ -1,5 +1,5 @@
-#ifndef SLL_H
-#define SLL_H
+#ifndef __SLL_H
+#define __SLL_H 1
 
 #include <stdint.h>
 
@@ -18,4 +18,4 @@ struct sllnode {
  */
 typedef struct sllnode node;
 
-#endif /* end SSL_H  */
+#endif /* end __SSL_H  */
